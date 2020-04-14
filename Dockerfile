@@ -1,6 +1,7 @@
 
-FROM ruby:2.7
+FROM ruby:alpine
 
-RUN gem install git-pr-release
+RUN apk add git && \
+    gem install git-pr-release
 
 CMD ["git-pr-release"]
